@@ -28,9 +28,10 @@ export function getRandomColor() {
 }
 
 // store 안의 state 값을 props로 연결합니다.
+// → 스토어가 가진 상태 구조가 바뀌었으므로 함께 변경
 const mapStateToProps = (state) => ({
-  color: state.color,
-  number: state.number,
+  color: state.colorData.color,
+  number: state.numberData.number,
 });
 
 /*
