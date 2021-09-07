@@ -9,8 +9,11 @@ import { createStore } from "redux";
 import reducers from "./reducers";
 import { Provider } from "react-redux";
 
-// 스토어 생성
-const store = createStore(reducers);
+// 스토어 생성 → Redux DevTools 확장 프로그램을 위한 수정
+const store = createStore(
+  reducers,
+  window.devToolsExtension && window.devToolsExtension()
+);
 
 ReactDOM.render(
   <Provider store={store}>
